@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Divine Birthday Blessing 💙</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #f8d990;
+  --cream: #fff5e4;
+  --pink: #f5b8d2;
+  --blue: #0c1935;
+}
+
+body {
+  background: var(--blue);
+  color: var(--cream);
+  font-family: Poppins, sans-serif;
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 100svh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#opening {
+  background: radial-gradient(ellipse at center, #38466c, #080e20 85%);
+  cursor: pointer;
+}
+
+.krishna-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  opacity: .86;
+  transition: transform 2s ease, filter 1s ease;
+}
+
+#opening::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 10, 28, .12),
+    rgba(4, 10, 28, .08) 40%,
+    rgba(4, 10, 28, .92)
+  );
+  pointer-events: none;
+}
+
+.opening-content {
+  position: relative;
+  z-index: 2;
+  width: min(90%, 520px);
+  margin-top: 48vh;
+  padding: 20px 12px 38px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+h1, h2, .script {
+  font-family: "Dancing Script", cursive;
+}
+
+.opening-content h1 {
+  font-size: clamp(42px, 9vw, 68px);
+  line-height: 1.12;
+  text-shadow: 0 0 28px #f8d99065;
+  margin-bottom: 14px;
+}
+
+.opening-content p {
+  color: #fff1db;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tap-button {
+  display: inline-block;
+  margin-top: 25px;
+  border: 1px solid #f8d990a8;
+  color: var(--cream);
+  background: #f8d99013;
+  padding: 14px 24px;
+  border-radius: 40px;
+  letter-spacing: 1px;
+  font: 500 12px Poppins, sans-serif;
+  backdrop-filter: blur(10px);
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 8px #f8d99012; }
+  50% { box-shadow: 0 0 25px #f8d99055; }
+}
+
+/* Eye blinking animation overlay.
+   The mask is a decorative eyelid, not facial tracking. */
+.blink-hint {
+  position: absolute;
+  z-index: 3;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff5df;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 15px #000;
+  animation: hint 2.4s infinite;
+  pointer-events: none;
+}
+
+@keyframes hint {
+  0%, 90%, 100% { opacity: 1; }
+  94%, 97% { opacity: .2; }
+}
+
+#opening.blessing .krishna-photo {
+  transform: scale(1.1);
+  filter: brightness(1.35);
+}
+
+#opening.blessing {
+  animation: revealGlow 1.8s ease forwards;
+}
+
+@keyframes revealGlow {
+  50% { filter: brightness(1.5); }
+  100% { filter: brightness(1); }
+}
+
+/* Birthday page */
+#birthday {
+  display: none;
+  background:
+    radial-gradient(ellipse at top, #253e6d, transparent 65%),
+    linear-gradient(160deg, #101d3a, #3b2449 70%, #15162f);
+  padding: 55px 18px;
+}
+
+#birthday.show {
+  display: flex;
+  animation: fadeIn 1.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.birthday-content {
+  width: min(100%, 600px);
+  position: relative;
+  z-index: 2;
+}
+
+.peacock {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.birthday-content h2 {
+  color: var(--gold);
+  font-size: clamp(42px, 9vw, 67px);
+  margin-bottom: 8px;
+  line-height: 1.12;
+}
+
+.subtitle {
+  letter-spacing: 3px;
+  font-size: 11px;
+  color: #f4c8df;
+  margin-bottom: 27px;
+}
+
+.photo-frame {
+  width: min(68vw, 290px);
+  height: min(80vw, 350px);
+  margin: 0 auto 26px;
+  padding: 7px;
+  border: 1px solid var(--gold);
+  border-radius: 150px 150px 24px 24px;
+  background: linear-gradient(145deg, #f8d990, #e8a9ce, #fff2c5);
+  box-shadow: 0 0 35px #f5b8d23b;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 145px 145px 19px 19px;
+  display: block;
+}
+
+.wish-card {
+  background: #ffffff0c;
+  border: 1px solid #f8d99045;
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 26px 22px;
+  margin-top: 15px;
+}
+
+.wish-card h3 {
+  font: 600 32px "Dancing Script", cursive;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.wish-card p {
+  color: #fff0e9;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.blessing {
+  color: #f8d990;
+  margin-top: 22px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: .3px;
+}
+
+.signature {
+  font: 600 28px "Dancing Script", cursive;
+  color: #f4c1d8;
+  margin-top: 20px;
+}
+
+.petal {
+  position: fixed;
+  z-index: 1;
+  top: -30px;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(650deg); opacity: 0; }
+}
+
+#surpriseBtn {
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  background: #f8d99018;
+  color: var(--cream);
+  padding: 13px 23px;
+  margin-top: 24px;
+  cursor: pointer;
+  font: 12px Poppins, sans-serif;
+}
+
+#finalMessage {
+  display: none;
+  color: #ffe5ef;
+  font: 28px "Dancing Script", cursive;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE ONE: KRISHNA -->
+<section class="page" id="opening" aria-label="Tap to open birthday blessing">
+  <img class="krishna-photo"
+       src="krishna.jpg.png"
+       alt="Lord Krishna"
+       onerror="this.style.display='none';document.getElementById('imageHelp').style.display='block';">
+
+  <div class="blink-hint">✦ A DIVINE MOMENT ✦</div>
+
+  <div class="opening-content">
+    <div class="eyebrow">A little blessing from Vrindavan</div>
+    <h1>His blessings,<br>her special day 💙</h1>
+    <p>
+      Some surprises are made with love.<br>
+      This one begins with a blessing from Kanha.
+    </p>
+
+    <button class="tap-button" id="openBtn" type="button">
+      🦚 TAP KRISHNA'S FACE 🦚
+    </button>
+
+    <p id="imageHelp" style="display:none;margin-top:14px;color:#ffe5a5">
+      Add your Krishna portrait as <b>krishna.jpg</b> beside index.html.
+    </p>
+  </div>
+</section>
+
+<!-- PAGE TWO: HER BIRTHDAY -->
+<section class="page" id="birthday">
+  <main class="birthday-content">
+    <div class="peacock">🦚 💙 🪷</div>
+
+    <div class="eyebrow">A blessing made just for you</div>
+    <h2>Happy Birthday!</h2>
+    <p class="subtitle">GOVINDA'S FAVOURITE GIRL ✨</p>
+
+    <div class="photo-frame">
+      <img src="sister.jpg.jpeg" alt="Birthday girl"
+           onerror="this.onerror=null;this.src='https://placehold.co/500x650/24365B/FFF0D6?text=Add+Sister+Photo';">
+    </div>
+
+    <div class="script" style="font-size:30px;color:#f5c7dc">
+      My beautiful sister ❤️
+    </div>
+
+    <article class="wish-card">
+      <h3>Dear Chotu,</h3>
+      <p>
+        Happy Birthday to the sweetest blessing in my life! 🥹💗
+        <br><br>
+        I pray that Krishna always holds your hand,
+        guides every step you take, protects your beautiful heart,
+        and fills your life with peace, love and endless happiness.
+        <br><br>
+        May your smile always shine, your dreams come true,
+        and your faith in Kanha grow stronger every day.
+        <br><br>
+        I feel so lucky to have you as my sister.
+        You are a blessing in my life, and I will always pray
+        for your happiness.
+      </p>
+    </article>
+
+    <div class="blessing">
+      🪷 Radhe Radhe 🪷<br>
+      May Krishna's love and blessings always be with you.
+    </div>
+
+    <button id="surpriseBtn" type="button">
+      💌 One More Little Surprise
+    </button>
+
+    <div id="finalMessage">
+      In every lifetime, I'd wish for you<br>
+      to be my sister again. ❤️<br>
+      <span style="font-size:22px">Forever grateful for you. ♾️</span>
+    </div>
+
+    <div class="signature">With all my love, always 💗</div>
+  </main>
+</section>
+
+<script>
+const opening = document.getElementById("opening");
+const birthday = document.getElementById("birthday");
+const openBtn = document.getElementById("openBtn");
+const surpriseBtn = document.getElementById("surpriseBtn");
+const finalMessage = document.getElementById("finalMessage");
+
+function openBlessing() {
+  if (opening.dataset.opened === "true") return;
+  opening.dataset.opened = "true";
+  opening.classList.add("blessing");
+  openBtn.textContent = "✨ A BLESSING FOR YOU ✨";
+
+  setTimeout(() => {
+    opening.style.display = "none";
+    birthday.classList.add("show");
+    window.scrollTo({ top: 0, behavior: "instant" });
+    petals();
+  }, 1500);
+}
+
+openBtn.addEventListener("click", openBlessing);
+opening.addEventListener("click", (event) => {
+  if (event.target.closest("button")) return;
+  openBlessing();
+});
+
+function petals() {
+  const symbols = ["🌸", "🪷", "💗", "✨", "🌺"];
+  for (let i = 0; i < 26; i++) {
+    const el = document.createElement("span");
+    el.className = "petal";
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = (5 + Math.random() * 7) + "s";
+    el.style.animationDelay = Math.random() * 4 + "s";
+    el.style.fontSize = (14 + Math.random() * 16) + "px";
+    document.body.appendChild(el);
+    el.addEventListener("animationend", () => el.remove());
+  }
+}
+
+surpriseBtn.addEventListener("click", () => {
+  finalMessage.style.display = "block";
+  surpriseBtn.textContent = "💖 You Are Loved, Always 💖";
+  surpriseBtn.disabled = true;
+});
+</script>
+
+</body>
+</html>
